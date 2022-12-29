@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="#">
+        <select name="" class="form-control w-50" id="country">
+            <option value="" >select country</option>
+        </select><br>
+        <select name="" id="state" class="form-control w-50">
+            <option value="" >select state</option>
+        </select><br>
+        <select name="" id="city" class="form-control w-50">
+            <option value="" >select city</option>
+        </select>
+    </form>
+</body>
+<script>
+    var select={
+        'india':{
+            'andrapradesh':['vsk','vjd','kkd'],
+            'telangana':['skd','hyd','warangal']
+        },
+        'america':{
+            'newyark':['city1','city2','city3'],
+            'wasiningtowndc':['city4','city5','city6']
+        }
+               
+    };
+    window.onload=function(){
+        var country=document.getElementById('country');
+        var state=document.getElementById('state');
+        var city=document.getElementById('city');
+        state.disabled=true;
+        city.disabled=true;
+        for(var a in select){
+            country.options[country.options.length]=new Option(a,a);
+        }
+        country.onchange=function(){
+            state.length=1;
+            city.length=1;
+        state.disabled=false;
+
+            for(var b in select[this.value]){
+                state.options[state.options.length]=new Option(b,b);
+            }
+            state.onchange=function(){
+                city.length=1;
+                city.disabled=false;
+                var c=select[country.value][this.value];
+                for(var i=0;i<c.length;i++){
+                    city.options[city.options.length]=new Option(c[i],c[i]);
+                }
+            }
+        }
+    }
+</script>
+</html>

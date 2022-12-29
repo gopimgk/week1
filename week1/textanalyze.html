@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" onsubmit="analysis()">
+        <input type="text" id="text">
+        <input type="submit" id="" value="analyze">
+    </form>
+</body>
+<script>
+    function analysis(){
+    var text=document.getElementById('text').value;
+    var text1=text.split(" ");
+    console.log(text1.length);
+    document.writeln('number of words'+text1.length+'<br>');
+    
+    for(let i=0;i<text.length;i++){
+    
+    let count=1;
+
+        for(let j=i+1;j<text.length;j++){
+            if(text[i]==text[j]){
+            count++
+            }
+        }
+            console.log(text[i]);
+            console.log(count);
+            document.writeln(text[i]+" "+'repeated'+count+'<br>');
+    }
+    }
+    
+</script>
+</html>

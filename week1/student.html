@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form  class="form-group" action="#" onsubmit="formValue()">
+       Name: <input type="text" class="form-control" name="" id="name">
+       age: <input type="text" name="" class="form-control" id="age">
+        email:<input type="text" name="" class="form-control"id="email">
+        gender:<input type="radio" name="gender" id="male" value="male">male
+               <input type="radio" name="gender" id="female" value="female">female<br>
+        city:<select class="form-control"  id="city">
+            <option>select city</option>
+            <option>vizag</option>
+            <option>kakinada</option>
+            <option>hydrabad</option>
+            </select>
+        languages:<input type="checkbox" id="telugu" value="telugu">telugu
+                   <input type="checkbox" id="hindi" value="hindi">hind
+                   <input type="checkbox" id="english" value="english">english<br>
+            <input type="submit" name="" class="btn btn-info" id="">
+    </form>
+    <style>
+        .form-group{
+            width:600px;
+            background:gray;
+            padding:5%;
+            margin-left:25%;
+            margin-top:5%;
+        }
+     </style>
+</body>
+<script>
+    function formValue(){
+    var name=document.getElementById("name").value;
+    console.log(name);
+
+    var age=document.getElementById("age").value;
+    console.log(age);
+
+    var email=document.getElementById("email").value;
+    console.log(email);
+
+    var city=document.getElementById("city").value;
+    console.log(city);
+
+    var gender=document.querySelector("input[name='gender']:checked").value;
+    console.log(gender);
+    
+    var c1=document.getElementById("telugu");
+    var c2=document.getElementById("hindi");
+    var c3=document.getElementById("english");
+
+    var ct=[c1,c2,c3];
+    for(let i=0;i<ct.length;i++){
+        if(ct[i].checked){
+            console.log(ct[i].value);
+        }
+    }
+}
+formValue();
+</script>
+</html>

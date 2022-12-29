@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="#" onsubmit="submit()" >
+        <input type="text"  id="n1" value="10"><br>
+        <input type="text"  id="n2"value="1"><br>
+        <input type="text"  id="n3"value="12"><br>
+        <input type="text"  id="n4"value="14"><br>
+        <input type="text"  id="n5"value="17"><br>
+        <input type="text"  id="n6"value="14"><br>
+        <input type="text"  id="n7"value="12"><br>
+        <input type="text"  id="n8"value="15"><br>
+        <input type="text"  id="n9"value="19"><br>
+        <input type="text"  id="n10"value="18"><br>
+        <input type="submit" name="" id="" >
+
+    </form>
+</body>
+<script>
+    function submit(){
+    var n1=document.getElementById('n1').value;
+    var n2=document.getElementById('n2').value;
+    var n3=document.getElementById('n3').value;
+    var n4=document.getElementById('n4').value;
+    var n5=document.getElementById('n5').value;
+    var n6=document.getElementById('n6').value;
+    var n7=document.getElementById('n7').value;
+    var n8=document.getElementById('n8').value;
+    var n9=document.getElementById('n9').value;
+    var n10=document.getElementById('n10').value;
+
+    var num=[n1,n2,n3,n4,n5,n6,n7,n8,n9,n10];
+    num.sort(function(a, b){return a - b});
+    for(let i=0;i<num.length;i++){
+        console.log(num[i]);
+        document.writeln(num[i]);
+    }
+}
+    submit();
+</script>
+</html>
